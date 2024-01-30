@@ -1,0 +1,14 @@
+menu "Audio Media HAL"
+
+choice AUDIO_BOARD
+    prompt "Audio hardware board"
+    default ESP32-S3-DEVKIT-C
+    help
+        Select an audio board to use
+
+config ESP32_S3_DEVKIT_C
+    bool "ESP32-S3-DEVKIT-C"
+    depends on IDF_TARGET_ESP32S3  
+endchoice
+
+endmenu

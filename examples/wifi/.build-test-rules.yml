@@ -1,0 +1,18 @@
+# Documentation: .gitlab/ci/README.md#manifest-file-to-control-the-buildtest-apps
+
+examples/wifi/ftm:
+  disable:
+    - if: SOC_WIFI_FTM_SUPPORT != 1
+      reason: requires hardware support
+
+examples/wifi/getting_started:
+  disable_test:
+    - if: IDF_TARGET != "esp32"
+      temporary: true
+      reason: lack of runners
+
+examples/wifi/iperf:
+  disable_test:
+    - if: IDF_TARGET != "esp32"
+      temporary: true
+      reason: lack of runners
